@@ -11,24 +11,33 @@ window.addEventListener("load", () => {
     bgMusic.play().catch(() => {});
 });
 
-function playVideo(){
-
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-
-    tapSound.currentTime = 0;
-    tapSound.play();
-
-    document.getElementById("question").style.display = "none";
-    document.getElementById("videoContainer").style.display = "block";
+function playVideo() {
 
     const video = document.getElementById("myVideo");
 
-    video.volume = 1;
-    video.muted = false;
+    // Stop background music
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
 
-    tapSound.onended = function(){
-        video.play();
-    };
+    // Hide question
+    document.getElementById("question").style.display = "none";
+    document.getElementById("videoContainer").style.display = "block";
+
+    // Play tap sound
+    tapSound.currentTime = 0;
+    tapSound.play().catch(() => {});
+
+    // Video start after tap sound
+    setTimeout(() => {
+
+        video.currentTime = 0;
+        video.muted = false;
+        video.volume = 1;
+
+        video.play().catch(err => {
+            console.log(err);
+        });
+
+    }, 300);
 
 }
