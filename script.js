@@ -1,13 +1,34 @@
+const bgMusic = new Audio("mmm.mp3");
+bgMusic.loop = true;
+bgMusic.volume = 1;
+
+const tapSound = new Audio("mu.mp3");
+tapSound.volume = 1;
+tapSound.preload = "auto";
+
+// Browser allow kare to music start hoga
+window.addEventListener("load", () => {
+    bgMusic.play().catch(() => {});
+});
+
 function playVideo(){
 
-document.getElementById("question").style.display="none";
-document.getElementById("videoContainer").style.display="block";
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
 
-const video=document.getElementById("myVideo");
+    tapSound.currentTime = 0;
+    tapSound.play();
 
-video.muted = false;
-video.volume = 1;
+    document.getElementById("question").style.display = "none";
+    document.getElementById("videoContainer").style.display = "block";
 
-video.play();
+    const video = document.getElementById("myVideo");
+
+    video.volume = 1;
+    video.muted = false;
+
+    tapSound.onended = function(){
+        video.play();
+    };
 
 }
