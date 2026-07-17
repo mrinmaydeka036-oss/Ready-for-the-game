@@ -2,7 +2,7 @@ const bgMusic = new Audio("mmm.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 1;
 
-const tapSound = new Audio("mu.mp4"); // Agar file ka naam mu.mp3 hai to yahan mu.mp3 likho
+const tapSound = new Audio("mu.mp3"); // Agar file ka naam mu.mp3 hai to yahan mu.mp3 likho
 
 function startWebsite() {
 
