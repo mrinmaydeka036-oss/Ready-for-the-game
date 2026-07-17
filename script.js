@@ -2,7 +2,7 @@ const bgMusic = new Audio("mmm.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 1;
 
-const tapSound = new Audio("mu.mp3.mp4");
+const tapSound = new Audio("mu.mp4");
 tapSound.volume = 1;
 tapSound.preload = "auto";
 
