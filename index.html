@@ -6,21 +6,21 @@
 <title>Are you ready? 😈</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div id="question">
     <h1>Are you ready? 😈</h1>
 
     <div class="buttons">
-        <button class="yes" onclick="playVideo()">💀 Yes</button>
-        <button class="no" onclick="playVideo()">🤡 No</button>
+        <button onclick="playVideo()">💀 Yes</button>
+        <button onclick="playVideo()">🤡 No</button>
     </div>
 </div>
 
-<div id="videoContainer">
-    <video id="myVideo" playsinline>
+<div id="videoContainer" style="display:none;">
+    <video id="myVideo" playsinline preload="auto">
         <source src="cid.mp4" type="video/mp4">
+        Your browser doesn't support video.
     </video>
 </div>
 
