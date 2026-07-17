@@ -25,19 +25,13 @@ function playVideo() {
 
     // Play tap sound
     tapSound.currentTime = 0;
-    tapSound.play().catch(() => {});
 
-    // Video start after tap sound
+tapSound.play().catch(() => {});
     setTimeout(() => {
-
         video.currentTime = 0;
         video.muted = false;
         video.volume = 1;
-
-        video.play().catch(err => {
-            console.log(err);
-        });
-
-    }, 300);
+        video.play();
+    }, 1000);
 
 }
