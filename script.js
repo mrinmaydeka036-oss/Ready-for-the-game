@@ -2,14 +2,15 @@ const bgMusic = new Audio("mmm.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 1;
 
-const tapSound = new Audio("mu.mp4");
-tapSound.volume = 1;
-tapSound.preload = "auto";
+const tapSound = new Audio("mu.mp4"); // Agar file ka naam mu.mp3 hai to yahan mu.mp3 likho
 
-// Browser allow kare to music start hoga
-window.addEventListener("load", () => {
+function startWebsite() {
+
     bgMusic.play().catch(() => {});
-});
+
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("question").style.display = "block";
+}
 
 function playVideo() {
 
@@ -26,12 +27,19 @@ function playVideo() {
     // Play tap sound
     tapSound.currentTime = 0;
 
-tapSound.play().catch(() => {});
+    tapSound.play().catch(() => {});
+
+    // Video starts after tap sound
     setTimeout(() => {
+
         video.currentTime = 0;
         video.muted = false;
         video.volume = 1;
-        video.play();
+
+        video.play().catch(err => {
+            console.log(err);
+        });
+
     }, 1000);
 
 }
