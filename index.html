@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Are you ready? 😈</title>
+<title>Are you Ready? 😈</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="question">
+<!-- Continue Screen -->
+<div id="startScreen">
+    <h1>Welcome 😈</h1>
+    <button onclick="startWebsite()">Continue</button>
+</div>
+
+<!-- Ready Screen -->
+<div id="question" style="display:none;">
     <h1>Are you ready? 😈</h1>
 
     <div class="buttons">
@@ -18,9 +25,10 @@
     </div>
 </div>
 
+<!-- Video -->
 <div id="videoContainer" style="display:none;">
-    <video id="myVideo" autoplay playsinline controls>
-    <source src="cid.mp4" type="video/mp4">
+    <video id="myVideo" playsinline preload="auto">
+        <source src="cid.mp4" type="video/mp4">
     </video>
 </div>
 
